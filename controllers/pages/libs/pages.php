@@ -28,7 +28,7 @@ class PagesController {
         $this->pages->setMetatitle($formvars['metatitle']);
         $this->pages->setMetadescription($formvars['metadescription']);
         $this->pages->setKeywords($formvars['keywords']);
-        $active = ($formvars['keywords'] == 'on') ? 1 : 0;
+        $active = ($formvars['active'] == 'on') ? 1 : 0;
         $this->pages->setActive($active);
 
         $this->daopages->save($this->pages);
@@ -41,10 +41,11 @@ class PagesController {
         $this->pages->setMetatitle($formvars['metatitle']);
         $this->pages->setMetadescription($formvars['metadescription']);
         $this->pages->setKeywords($formvars['keywords']);
-        $active = ($formvars['keywords'] == 'on') ? 1 : 0;
+        $active = ($formvars['active'] == 'on') ? 1 : 0;
         $this->pages->setActive($active);
+        $this->pages->setId($id);
 
-        $this->daopages->update($this->pages, $id);
+        $this->daopages->update($this->pages);
     }
 
     public function view($data) {
@@ -52,10 +53,22 @@ class PagesController {
         $this->tpl->display('overview.tpl');
     }
 
+    public function remove($id) {
+        return $this->daopages->delete($id);
+    }
+
     public function create($formvars = array()) {
         $this->tpl->assign('post', $formvars);
         $this->tpl->assign('error', $this->error);
         $this->tpl->display('form.tpl');
+    }
+
+    public function edit($formvars = array(), $id) {
+        $this->daopages->get($this->pages, $id);
+        $this->tpl->assign('post', $formvars);
+        $this->tpl->assignByRef('pages', $this->pages);
+        $this->tpl->assign('error', $this->error);
+        $this->tpl->display('edit.tpl');
     }
 
     public function getEntries() {

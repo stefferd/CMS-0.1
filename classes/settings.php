@@ -6,10 +6,13 @@
  * Time: 11:38
  */
 define('url', 'http://localhost/de-stijlert/');
+define('theme', 'theme/default/');
+define('version', '1.1');
 
 define('classes', 'classes/');
 define('smarty_dir', 'libs/smarty/');
-define('theme', 'theme/default/');
+
+define('general_controllers', 'controllers/general/');
 
 define('profile_class', classes . 'profile/');
 define('profile_controller', 'controllers/profile/');

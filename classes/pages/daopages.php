@@ -16,7 +16,7 @@ class DaoPages implements IntDaoPages
 {
     public function delete($id) {
         $db = new Db();
-        if ($smtm = $db->mysqli->prepare('DELETE * FROM pages WHERE id = ?')) {
+        if ($smtm = $db->mysqli->prepare('DELETE FROM pages WHERE id = ?')) {
             $smtm->bind_param('i', $id);
             $smtm->execute();
             $db->mysqli->close();
@@ -54,7 +54,7 @@ class DaoPages implements IntDaoPages
         return $pages->getId();
     }
 
-    public function update(Pages $pages, $id)
+    public function update(Pages $pages)
     {
         $db = new Db();
         if ($smtm = $db->mysqli->prepare('UPDATE pages SET uniqueid = ?, title = ?, text = ?, metatitle = ?,

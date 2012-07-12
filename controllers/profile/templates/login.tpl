@@ -15,6 +15,5 @@
     </div>
     <div class="buttons">
         <input type="submit" value="Inloggen" />
-        <a href="{$SCRIPT_NAME|replace:'index.php':''}profile/subscribe/" title="Aanmelden">Aanmelden</a>
     </div>
 </form>

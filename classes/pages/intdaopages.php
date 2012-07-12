@@ -12,7 +12,7 @@ require_once(classes. '/pages/pages.php');
 interface IntDaoPages
 {
     public function save(Pages $pages);
-    public function update(Pages $pages, $id);
+    public function update(Pages $pages);
     public function delete($id);
     public function get(Pages $pages, $id);
     public function getEntries();

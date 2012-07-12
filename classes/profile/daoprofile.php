@@ -41,12 +41,11 @@ class DaoProfile implements IntDaoProfile
     public function save(Profile $profile)
     {
         $db = new Db();
-        if ($smtm = $db->mysqli->prepare('UPDATE profile SET name = ?, lastname = ?, emailaddress = ?, password = ?, birthday = ?, updated = ?, loggedin = ?, active = ? WHERE id = ?')) {
-            $smtm->bind_param('sssssssii',
+        if ($smtm = $db->mysqli->prepare('UPDATE profile SET name = ?, lastname = ?, emailaddress = ?, birthday = ?, updated = ?, loggedin = ?, active = ? WHERE id = ?')) {
+            $smtm->bind_param('ssssssii',
                 $profile->getName(),
                 $profile->getLastname(),
                 $profile->getEmailaddress(),
-                $profile->getPassword(),
                 $profile->getBirthday(),
                 time(),
                 $profile->getLoggedIn(),
@@ -79,6 +78,18 @@ class DaoProfile implements IntDaoProfile
                 $profile->setLoggedIn($loggedin);
             }
             $db->mysqli->close();
+        }
+    }
+
+    public function delete($id) {
+        $db = new Db();
+        if ($smtm = $db->mysqli->prepare('DELETE FROM profile WHERE id = ?')) {
+            $smtm->bind_param('i', $id);
+            $smtm->execute();
+            $db->mysqli->close();
+            return true;
+        } else {
+            return false;
         }
     }
 

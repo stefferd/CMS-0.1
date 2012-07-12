@@ -33,6 +33,7 @@ class ProfileController {
         $_SESSION['username'] = '';
         $_SESSION['id'] = 0;
         $_SESSION['fullname'] = '';
+        $_SESSION['LOGIN'] = false;
     }
 
     public function subscribe($formvars = array()) {
@@ -72,11 +73,13 @@ class ProfileController {
             $_SESSION['username'] = $this->profile->getEmailaddress();
             $_SESSION['id'] = $this->profile->getId();
             $_SESSION['fullname'] = $this->profile->getName() . ' ' . $this->profile->getLastname();
+            $_SESSION['LOGIN'] = true;
             echo 'U bent ingelogd, <a href="' . str_replace('index.php', '', $_SERVER['PHP_SELF']) . '">Ga terug naar startpagina</a>.';
         } else {
             $_SESSION['username'] = '';
             $_SESSION['id'] = 0;
             $_SESSION['fullname'] = '';
+            $_SESSION['LOGIN'] = false;
             echo 'U bent niet ingelogd, <a href="' . str_replace('index.php', '', $_SERVER['PHP_SELF']) . '">Ga terug naar startpagina en probeer het opnieuw.</a>';
         }
     }
