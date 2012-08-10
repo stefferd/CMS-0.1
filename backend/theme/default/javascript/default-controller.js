@@ -11,7 +11,7 @@ var Default = {
     initEditor: function() {
         $('textarea#tinymce').tinymce({
             // Location of TinyMCE script
-            script_url : 'http://www.mmcms.net/1.1/editor/jscripts/tiny_mce/tiny_mce.js',
+            script_url : 'http://www.mmcms.net/1.1/shared/editor/jscripts/tiny_mce/tiny_mce.js',
             document_base_url : "http://",
             remove_script_host: false,
             relative_urls : false,

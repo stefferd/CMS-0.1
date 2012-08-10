@@ -1,6 +1,6 @@
 <footer>
     <div class="footer">
-        Copyright © 2012 InternationalKartParts | <a class="footerLight" href="http://www.vandenbergmultimedia.nl" title="Van den Berg Multimedia" target="_blank">Van den Berg Multimedia</a>
+        Copyright © 2012 SVO Korfbal Ooij | <a class="footerLight" href="http://www.vandenbergmultimedia.nl" title="Van den Berg Multimedia" target="_blank">Van den Berg Multimedia</a>
     </div>
 </footer>
 <script type="text/javascript">

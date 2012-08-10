@@ -39,7 +39,7 @@ class Snippet
     public function getTitle() { return $this->title; }
 
     public function setText($text) { $this->text = $text; }
-    public function getText() { return $this->text; }
+    public function getText() { return stripslashes($this->text); }
 
     public function setActive($active) { $this->active = $active; }
     public function getActive() { return $this->active; }

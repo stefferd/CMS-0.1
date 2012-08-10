@@ -11,7 +11,7 @@
             <div class="column column3">E-mailadres</div>
             <div class="column column4">Aangepast op</div>
             <div class="column column5">&nbsp;</div>
-            <div class="column column6">&nbsp;</div>
+            <!--<div class="column column6">&nbsp;</div>-->
         </div>
     {section name=profiles loop=$data}
         {assign var=profile value=$data[profiles]}
@@ -21,7 +21,7 @@
             <div class="column column3">{$profile->getEmailaddress()|escape}</div>
             <div class="column column4">{$profile->getUpdated()|date_format:"%d-%m-%Y"}</div>
             <div class="column column5"><a href="{$SCRIPT_NAME|replace:'index.php':''}users/edit/{$profile->getId()}/" title="Bewerken">Bewerken</a></div>
-            <div class="column column6"><a href="{$SCRIPT_NAME|replace:'index.php':''}users/delete/{$profile->getId()}/" title="Verwijderen">Verwijderen</a></div>
+            <!--<div class="column column6"><a href="{$SCRIPT_NAME|replace:'index.php':''}users/delete/{$profile->getId()}/" title="Verwijderen">Verwijderen</a></div>-->
         </div>
     {/section}
     </div>

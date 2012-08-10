@@ -26,7 +26,7 @@
             </div>
             <div class="block page">
                 <div class="field">
-                    <div class="answer"><textarea id="tinymce" name="text" placeholder="Tekstuele inhoud">{$snippet->getText()|escape}</textarea></div>
+                    <div class="answer"><textarea id="tinymce" name="text" placeholder="Tekstuele inhoud">{$snippet->getText()|unescape:"htmlall"}}</textarea></div>
                 </div>
             </div>
         </div>

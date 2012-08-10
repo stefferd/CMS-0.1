@@ -11,7 +11,7 @@
             <div class="column column3">Aangemaakt op</div>
             <div class="column column4">Aangepast op</div>
             <div class="column column5">&nbsp;</div>
-            <div class="column column6">&nbsp;</div>
+            <!--<div class="column column6">&nbsp;</div>-->
         </div>
     {section name=pagesec loop=$data}
         {assign var=pages value=$data[pagesec]}
@@ -21,7 +21,7 @@
             <div class="column column3">{$pages->getCreated()|date_format:"%d-%m-%Y"}</div>
             <div class="column column4">{$pages->getUpdated()|date_format:"%d-%m-%Y"}</div>
             <div class="column column5"><a href="{$SCRIPT_NAME|replace:'index.php':''}pages/edit/{$pages->getId()}/" title="Bewerken">Bewerken</a></div>
-            <div class="column column6"><a href="{$SCRIPT_NAME|replace:'index.php':''}pages/delete/{$pages->getId()}/" title="Verwijderen">Verwijderen</a></div>
+            <!--<div class="column column6"><a href="{$SCRIPT_NAME|replace:'index.php':''}pages/delete/{$pages->getId()}/" title="Verwijderen">Verwijderen</a></div>-->
         </div>
     {/section}
     </div>

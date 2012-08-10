@@ -45,7 +45,7 @@ class Pages
     public function getTitle() { return $this->title; }
 
     public function setText($text) { $this->text = $text; }
-    public function getText() { return $this->text; }
+    public function getText() { return stripslashes($this->text); }
 
     public function setMetatitle($metatitle) { $this->metatitle = $metatitle; }
     public function getMetatitle() { return $this->metatitle; }

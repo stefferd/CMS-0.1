@@ -6,25 +6,26 @@
  * Time: 11:38
  */
 define('host', 'localhost');
-define('username', 'deb33946_cmsadm');
-define('password', '@dmin1608');
-define('database', 'deb33946_cms11');
+define('username', 'deb33946_svoad');
+define('password', 'SvoKorfb@l');
+define('database', 'deb33946_svo');
 
-//define('url', 'http://localhost/de-stijlert/');
-define('url', 'http://mmcms.net/1.1/frontend/');
+define('cms', 'http://www.mmcms.net/' . version . '/');
+//define('url', 'http://www.internationalkartparts.nl/');
+define('url', 'http://mmcms.net/svokorfbal/');
 define('theme', 'theme/default/');
 define('version', '1.1');
 
-define('classes', '../shared/classes/');
-define('smarty_dir', '../shared/libs/smarty/');
+define('classes', '../' . version . '/shared/classes/');
+define('smarty_dir', '../' . version . '/shared/libs/smarty/');
 
-define('general_controllers', '../shared/controllers/general/');
+define('general_controllers', '../' . version . '/shared/controllers/general/');
 
 define('profile_class', classes . 'profile/');
-define('profile_controller', '../shared/controllers/profile/');
+define('profile_controller', '../' . version . '/shared/controllers/profile/');
 
 define('pages_class', classes . 'pages/');
-define('pages_controller', '../shared/controllers/pages/');
+define('pages_controller', '../' . version . '/shared/controllers/pages/');
 
 define('snippet_class', classes . 'snippet/');
-define('snippet_controller', '../shared/controllers/snippet/');
+define('snippet_controller', '../' . version . '/shared/controllers/snippet/');
